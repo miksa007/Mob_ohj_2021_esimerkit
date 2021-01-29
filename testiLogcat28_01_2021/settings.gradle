@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "testiLogcat28_01_2021"
