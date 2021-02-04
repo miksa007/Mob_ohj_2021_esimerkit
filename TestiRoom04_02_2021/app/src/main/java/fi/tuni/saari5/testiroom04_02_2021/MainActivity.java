@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static final int NEW_WORD_ACTIVITY_REQUEST_CODE = 1;
 
-    private WordViewModel mWordViewModel;
+    private TaskukirjaViewModel mTaskukirjaViewModel;
 
 
     @Override
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d("softa", "Alkoi");
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
-        final WordListAdapter adapter = new WordListAdapter(new WordListAdapter.WordDiff());
+        final TaskukirjaListAdapter adapter = new TaskukirjaListAdapter(new TaskukirjaListAdapter.TaskukirjaDiff());
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         Log.d("softa", "Alkoi 2");
@@ -37,20 +37,21 @@ public class MainActivity extends AppCompatActivity {
         //Ohjeen alkuperäinen ei toimi
         //mWordViewModel = new ViewModelProvider(this).get(WordViewModel.class);
         //Uusin toimii (issues 155)
-        mWordViewModel = new ViewModelProvider(this, ViewModelProvider
+        mTaskukirjaViewModel = new ViewModelProvider(this, ViewModelProvider
                 .AndroidViewModelFactory
-                .getInstance(this.getApplication())).get(WordViewModel.class);
+                .getInstance(this.getApplication())).get(TaskukirjaViewModel.class);
 
         // Update the cached copy of the words in the adapter.
-        mWordViewModel.getAllWords().observe(this, words -> {
+        mTaskukirjaViewModel.getKaikkiTaskukirjat().observe(this, taskukirjas -> {
             // Update the cached copy of the words in the adapter.
-            adapter.submitList(words);
+            adapter.submitList(taskukirjas);
         });
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener( view -> {
-            Intent intent = new Intent(MainActivity.this, NewWordActivity.class);
+            Intent intent = new Intent(MainActivity.this, NewTaskukirjaActivity.class);
+
             startActivityForResult(intent, NEW_WORD_ACTIVITY_REQUEST_CODE);
         });
 
@@ -60,8 +61,15 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == NEW_WORD_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Word word = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY));
-            mWordViewModel.insert(word);
+            String arvot=data.getStringExtra(NewTaskukirjaActivity.EXTRA_REPLY);
+            String[] osa=arvot.split(";");
+            int numero=Integer.parseInt(osa[0]);
+
+            Taskukirja taskukirja=new Taskukirja(numero, osa[1]);
+            mTaskukirjaViewModel.insert(taskukirja);
+
+
+
         } else {
             Toast.makeText(
                     getApplicationContext(),
