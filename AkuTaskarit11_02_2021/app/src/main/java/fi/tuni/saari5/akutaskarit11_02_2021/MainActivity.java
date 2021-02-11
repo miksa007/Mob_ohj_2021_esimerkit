@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -18,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int NEW_TASKUKIRJA_ACTIVITY_REQUEST_CODE = 1;
 
     private TaskukirjaViewModel mTaskukirjaViewModel;
-
+    private Button poistaKaikkiNappula;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,17 @@ public class MainActivity extends AppCompatActivity {
         mTaskukirjaViewModel.getKaikkiTaskukirjat().observe(this, taskukirjas -> {
             // Update the cached copy of the words in the adapter.
             adapter.submitList(taskukirjas);
+        });
+
+        poistaKaikkiNappula=findViewById(R.id.button);
+        poistaKaikkiNappula.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Add a toast just for confirmation
+                //Toast.makeText(this, "Clearing the data...",Toast.LENGTH_SHORT).show();
+                // Delete the existing data
+                mTaskukirjaViewModel.deleteAll();
+            }
         });
 
 

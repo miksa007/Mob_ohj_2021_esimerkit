@@ -26,4 +26,8 @@ public class TaskukirjaViewModel extends AndroidViewModel {
 
         mRepository.insert(taskukirja);
     }
+
+    public void deleteAll() {
+        mRepository.deleteAll();
+    }
 }

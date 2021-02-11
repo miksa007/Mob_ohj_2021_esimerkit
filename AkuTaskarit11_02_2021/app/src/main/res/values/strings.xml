@@ -4,5 +4,7 @@
     <string name="hint_word">Name...</string>
     <string name="button_save">Save</string>
     <string name="empty_not_saved">Taskukirja not saved because it is empty.</string>
+    <string name="vihje">Taskukirjan nimi</string>
+    <string name="vihjenro">Numero</string>
 
 </resources>

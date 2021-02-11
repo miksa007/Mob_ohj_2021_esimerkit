@@ -48,5 +48,4 @@ public abstract class TaskukirjaRoomDatabase extends RoomDatabase {
         }
     };
 
-
 }
