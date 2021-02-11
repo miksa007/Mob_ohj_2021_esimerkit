@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Taskarit 11_02_2021</string>
+    <string name="add_word">+</string>
+    <string name="hint_word">Name...</string>
+    <string name="button_save">Save</string>
+    <string name="empty_not_saved">Taskukirja not saved because it is empty.</string>
+
+</resources>
