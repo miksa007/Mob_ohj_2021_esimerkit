@@ -1,11 +1,13 @@
 package fi.tuni.saari5.akutaskarit11_02_2021;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 //import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,10 +24,15 @@ public class MainActivity extends AppCompatActivity {
     private TaskukirjaViewModel mTaskukirjaViewModel;
     private Button poistaKaikkiNappula;
 
+    //tällekin jotain käyttöa
+    private Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Kerrotaa myöhemmin sisäluokalle context, eli että mihin asia liittyy
+        context=this;
 
         Log.d("softa", "Alkoi");
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
@@ -53,10 +60,14 @@ public class MainActivity extends AppCompatActivity {
         poistaKaikkiNappula.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Add a toast just for confirmation
-                //Toast.makeText(this, "Clearing the data...",Toast.LENGTH_SHORT).show();
-                // Delete the existing data
-                mTaskukirjaViewModel.deleteAll();
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                builder.setMessage("Haluatko varmasti poistaa kaikki?");
+                builder.setPositiveButton("Poista", (d, id) -> {
+                    mTaskukirjaViewModel.deleteAll();
+                });
+                builder.setNegativeButton("Peruuta", null);
+                builder.create().show();
+
             }
         });
 

@@ -25,6 +25,15 @@ public class TaskukirjaRepository {
         });
     }
 
+    public void deleteAll(){
+        TaskukirjaRoomDatabase.databaseWriteExecutor.execute(()-> {
+            mTaskukirjaDao.deleteAll();
+        });
+    }
+
+    /*
+    //Vanha tapa toteuttaa asyncTask
+
     public void deleteAll()  {
         new deleteAllTaskukirjasAsyncTask(mTaskukirjaDao).execute();
     }
@@ -39,4 +48,5 @@ public class TaskukirjaRepository {
             mAsyncTaskDao.deleteAll();        return null;
         }
     }
+    */
 }

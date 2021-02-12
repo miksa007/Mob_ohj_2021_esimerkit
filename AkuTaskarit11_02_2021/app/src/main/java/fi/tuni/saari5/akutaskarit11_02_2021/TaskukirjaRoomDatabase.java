@@ -16,8 +16,11 @@ public abstract class TaskukirjaRoomDatabase extends RoomDatabase {
     public abstract TaskukirjaDao taskukirjaDao();
     private static volatile  TaskukirjaRoomDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS=4;
+
+
     static final ExecutorService databaseWriteExecutor=
             Executors.newFixedThreadPool(NUMBER_OF_THREADS);
+
     static TaskukirjaRoomDatabase getDatabase(final Context context){
         if (INSTANCE==null){
             synchronized (TaskukirjaRoomDatabase.class){

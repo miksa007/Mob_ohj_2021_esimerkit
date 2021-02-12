@@ -13,9 +13,9 @@ Mobiiliohjelmointikurssin esimerkkejä
 ## 11.2.2021
 * Pohjana 4.2 -tehty taskukirja sovellus
 * RecyclerView -laajennettu
-* Poista kaikki - toiminnallisuus lisätty
+* Poista kaikki - toiminnallisuus lisätty ja vielä varmistus "oletko varma?"
 #### TODO
- * Korjaa vanhat koodaustavat, eli "deprecated" osiot
+ * Korjattu ~~Korjaa vanhat koodaustavat, eli "deprecated" osiot~~
  * Korjaa tai lisää: menu -toteutus
 
  ## 18.2.2021
