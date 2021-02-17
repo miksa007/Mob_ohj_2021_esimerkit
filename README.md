@@ -19,3 +19,7 @@ Mobiiliohjelmointikurssin esimerkkejä
  * Korjaa tai lisää: menu -toteutus
 
  ## 18.2.2021
+ * Akut Firebasessa projekti
+ * commit "pohjakoodi"
+ * commit "valmis"
+ * (commit "virheet korjattu")
