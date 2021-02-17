@@ -16,6 +16,10 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +30,13 @@ public class MainActivity extends AppCompatActivity {
 
     //tällekin jotain käyttöa
     private Context context;
+
+    private FirebaseDatabase mFirebaseDatabase;
+    private DatabaseReference mAkussDatabaseReference;
+
+    private FirebaseFirestore mFirestore;
+    private CollectionReference akuReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,9 +45,13 @@ public class MainActivity extends AppCompatActivity {
         //Kerrotaa myöhemmin sisäluokalle context, eli että mihin asia liittyy
         context=this;
 
+        mFirestore = FirebaseFirestore.getInstance();
+        akuReference = mFirestore.collection("akuja");
+
+
         Log.d("softa", "Alkoi");
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
-        final TaskukirjaListAdapter adapter = new TaskukirjaListAdapter(new TaskukirjaListAdapter.TaskukirjaDiff());
+        final TaskukirjaListAdapter adapter = new TaskukirjaListAdapter(this, R.layout.recyclerview_item, );
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         Log.d("softa", "Alkoi 2");
