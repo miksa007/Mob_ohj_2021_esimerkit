@@ -14,12 +14,18 @@ Mobiiliohjelmointikurssin esimerkkejä
 * Pohjana 4.2 -tehty taskukirja sovellus
 * RecyclerView -laajennettu
 * Poista kaikki - toiminnallisuus lisätty ja vielä varmistus "oletko varma?"
-#### TODO
- * Korjattu ~~Korjaa vanhat koodaustavat, eli "deprecated" osiot~~
- * Korjaa tai lisää: menu -toteutus
 
- ## 18.2.2021
- * Akut Firebasessa projekti
- * commit "pohjakoodi"
- * commit "valmis"
- * (commit "virheet korjattu")
+* Korjattu ~~Korjaa vanhat koodaustavat, eli "deprecated" osiot~~
+
+## 18.2.2021
+* Akut Firebasessa projekti
+* commit "pohjakoodi"
+* commit "valmis"
+* (commit "virheet korjattu")
+* Huom json-file poistettu tietoturvan takia(eli koodilla ei suoraan pääse firebaseen)
+
+## 25.2.2021
+* Autentikointi testaus esimerkin voimalla
+* Huom json-file poistettu tietoturvan takia(eli koodilla ei suoraan pääse firebaseen
+
+
