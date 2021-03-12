@@ -28,4 +28,6 @@ Mobiiliohjelmointikurssin esimerkkejä
 * Autentikointi testaus esimerkin voimalla
 * Huom json-file poistettu tietoturvan takia(eli koodilla ei suoraan pääse firebaseen
 
-
+## 11.3.2021
+* Intent -esimerkissä demotaan mobiililaitteen sisältämien sovellusten/palvelujen käyttöä omasta sovelluksesta
+* Oikeudet -esimerkki kysyy käyttäjältä kameran käyttöön oikeuden ja käsittelee käyttäjän antaman vastauksen. (mutta kameran käyttö osuutta ei ole toteutettu)
