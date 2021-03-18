@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "Sensori 18_3_2021"

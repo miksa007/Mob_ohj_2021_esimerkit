@@ -31,3 +31,9 @@ Mobiiliohjelmointikurssin esimerkkejä
 ## 11.3.2021
 * Intent -esimerkissä demotaan mobiililaitteen sisältämien sovellusten/palvelujen käyttöä omasta sovelluksesta
 * Oikeudet -esimerkki kysyy käyttäjältä kameran käyttöön oikeuden ja käsittelee käyttäjän antaman vastauksen. (mutta kameran käyttö osuutta ei ole toteutettu)
+
+## 18.3.2021
+* Sensori -esimerkki demoaa sensorin käyttöönottoa
+* GPS -esimerkki kertoo paikannuksen
+* Kartta - esimerkki demoaa OpenStreetMapin käyttöä
+
