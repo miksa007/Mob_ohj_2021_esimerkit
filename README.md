@@ -33,7 +33,7 @@ Mobiiliohjelmointikurssin esimerkkejä
 * Oikeudet -esimerkki kysyy käyttäjältä kameran käyttöön oikeuden ja käsittelee käyttäjän antaman vastauksen. (mutta kameran käyttö osuutta ei ole toteutettu)
 
 ## 18.3.2021
-* Sensori -esimerkki demoaa sensorin käyttöönottoa
-* GPS -esimerkki kertoo paikannuksen
-* Kartta - esimerkki demoaa OpenStreetMapin käyttöä
+* Sensori -esimerkki demoaa sensorin käyttöönottoa. Tarkempi dokumentointi löytyy [https://github.com/miksa007/Sensorit2019](https://github.com/miksa007/Sensorit2019)
+* GPS -esimerkki kertoo paikannuksen ja dokumentointi löytyy [https://github.com/miksa007/AndroidGPS2018](https://github.com/miksa007/AndroidGPS2018)
+* Kartta - esimerkki demoaa OpenStreetMapin käyttöä ja dokumentointi löytyy [https://github.com/miksa007/Kartta2021](https://github.com/miksa007/Kartta2021)
 
