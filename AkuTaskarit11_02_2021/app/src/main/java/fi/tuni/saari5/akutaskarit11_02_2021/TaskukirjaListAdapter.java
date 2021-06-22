@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 
 import com.google.android.material.snackbar.Snackbar;
-
+/*
 import java.util.List;
 
 public class TaskukirjaListAdapter extends ArrayAdapter<Taskukirja> {
@@ -30,7 +30,7 @@ public class TaskukirjaListAdapter extends ArrayAdapter<Taskukirja> {
      * @param convertView
      * @param parent
      * @return
-     */
+     //
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
@@ -49,8 +49,8 @@ public class TaskukirjaListAdapter extends ArrayAdapter<Taskukirja> {
         return convertView;
     }
 
-}
-/*
+}*/
+
 public class TaskukirjaListAdapter extends ListAdapter<Taskukirja, TaskukirjaViewHolder> {
     public TaskukirjaListAdapter(@NonNull DiffUtil.ItemCallback<Taskukirja> diffcalback){
         super(diffcalback);
@@ -87,4 +87,4 @@ public class TaskukirjaListAdapter extends ListAdapter<Taskukirja, TaskukirjaVie
         }
     }
 }
-*/
+//*/

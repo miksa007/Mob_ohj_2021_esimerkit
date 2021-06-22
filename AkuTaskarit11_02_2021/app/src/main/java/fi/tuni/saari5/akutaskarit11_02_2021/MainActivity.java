@@ -31,11 +31,11 @@ public class MainActivity extends AppCompatActivity {
     //tällekin jotain käyttöa
     private Context context;
 
-    private FirebaseDatabase mFirebaseDatabase;
-    private DatabaseReference mAkussDatabaseReference;
+    //private FirebaseDatabase mFirebaseDatabase;
+    //private DatabaseReference mAkussDatabaseReference;
 
-    private FirebaseFirestore mFirestore;
-    private CollectionReference akuReference;
+    //private FirebaseFirestore mFirestore;
+    //private CollectionReference akuReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +45,15 @@ public class MainActivity extends AppCompatActivity {
         //Kerrotaa myöhemmin sisäluokalle context, eli että mihin asia liittyy
         context=this;
 
-        mFirestore = FirebaseFirestore.getInstance();
-        akuReference = mFirestore.collection("akuja");
+//        mFirestore = FirebaseFirestore.getInstance();
+//       akuReference = mFirestore.collection("akuja");
 
 
         Log.d("softa", "Alkoi");
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
-        final TaskukirjaListAdapter adapter = new TaskukirjaListAdapter(this, R.layout.recyclerview_item, );
+//        final TaskukirjaListAdapter adapter = new TaskukirjaListAdapter(this, R.layout.recyclerview_item, );
+        final TaskukirjaListAdapter adapter = new TaskukirjaListAdapter(new TaskukirjaListAdapter.TaskukirjaDiff());
+
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         Log.d("softa", "Alkoi 2");
